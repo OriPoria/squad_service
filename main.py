@@ -110,11 +110,14 @@ def custom():
     heros_b = create_heros()
     squad_b.add_all(heros_b)
     print(squad_b.str_squad())
+    if squad_a.name == squad_b.name:
+        print("Impossible to make a fight between 2 squads with the same name")
+        return
 
     ans = input("Do you want to start a fight? (Y/N) ")
     if ans.upper() == "Y":
-        service = Service(OneVsOne(single_fight_random),[squad_a,squad_b])
-        winner = service.fight(squad_a,squad_b)
+        service = Service(OneVsOne(single_fight_random), [])
+        service.fight(squad_a, squad_b)
 
 def main():
     while True:
