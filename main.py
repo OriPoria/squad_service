@@ -22,9 +22,10 @@ def first_presentaion():
     second_squad = my_service.squads['Squad 7']
     my_service.fight(first_squad,second_squad)
 
+
 def second_presentation():
-    heros = create_heros_pool()
     print("Second presentation:")
+    heros = create_heros_pool()
     out_of_box_squads_builder = OutOfBoxSquads()
     my_service = Service(AllVsAll(squad_power_metric), heros)
     my_service.build_squads(out_of_box_squads_builder)
@@ -125,7 +126,7 @@ def main():
         ans = input("Do you want to create new fight? (Y/N) ")
         if ans.upper() == "N":
             break
-    print("Thank you for playing the game, let's look at some build-in fights:")
+    print("Thank you for playing the game, let's look at some built-in fights:")
     first_presentaion()
     print("\nEnd of first presentation\n")
     second_presentation()
